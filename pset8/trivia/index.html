@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How many alpacas live in New Zealand?</h3>
+                <h2 id="txt"></h2>
+                <button class="correct">26,000 Alpacas</button>
+                <button class="wrong">17 Alpacas</button>
+                <button class="wrong">45,000 Alpacas</button>
+                <button class="wrong">0 Alpacas</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What gift does a male penguin give to a female in order to win her over?</h3>
+                <h2 id='ans'></h2>
+                <input type='text' id='answer' name='answer'>
+                <button class='submit'>Submit</button>
+            </div>
+        </div>
+
+        <script>
+            // TODO: Add code to check answers to questions
+            // Runs once dom is loaded
+            window.addEventListener("load", function ()
+            {
+                // When correct answer is clicked change button color to green
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function () {
+                    correct.style.backgroundColor = 'green';
+                    document.getElementById('txt').innerHTML = 'Correct!';
+                });
+
+                // When wrong answer is clicked change color to red
+                let wrong = document.querySelectorAll('.wrong');
+                for (let i = 0; i < wrong.length; i++)
+                {
+                    wrong[i].addEventListener('click', function()
+                    {
+                        wrong[i].style.backgroundColor = 'red';
+                        document.getElementById('txt').innerHTML = 'Wrong!';
+                    })
+                }
+
+                // Check free response question
+                let submit = document.querySelector('.submit');
+
+                submit.addEventListener('click', function()
+                {
+                    let input = document.querySelector('#answer');
+                    if (input.value.includes('pebble'))
+                    {
+                        document.getElementById('ans').innerHTML = 'Correct Answer';
+                        input.style.backgroundColor = 'green';
+                    }
+                    else {
+                        document.getElementById('ans').innerHTML = 'Wrong Answer';
+                        input.style.backgroundColor = 'red';
+                    }
+                });
+            });
+
+        </script>
+
+    </body>
+</html>

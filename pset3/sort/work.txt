@@ -1,0 +1,4 @@
+for random 50000
+sort1: 0m8.095
+sort2: 0m0.729
+sort3: 0m3.548

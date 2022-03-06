@@ -1,0 +1,11 @@
+{% extends "layout.html" %}}
+
+{% block body %}
+
+    <!--  Use method post to hide variables from url-->
+    <form action="/greet" method="post">
+    <input autocomplete="off" autofocus name="name" required placeholder="Name" type="text">
+        <input type="submit">
+    </form>
+
+{% endblock %}
